@@ -9,14 +9,16 @@ import NearMeOutlinedIcon from '@mui/icons-material/NearMeOutlined';
 import Clooounds from "./cloounds.png"
 import { Container } from 'react-bootstrap';
 import CloudQueueOutlinedIcon from '@mui/icons-material/CloudQueueOutlined';
-
+const colo = "red";
 export const Weather = (props) => {
-  const {city,temp,date,desc,pressure,humidity,visibility,temp_min,temp_max,windspeed,degree,sunrise,sunset} = props;
+  const {city,temp,date,desc,pressure,humidity,visibility,temp_min,temp_max,windspeed,degree,sunrise,sunset,color} = props;
   return (
+
+   
 
 <div style={{marginTop:"50px",marginLeft:"20px"}}>
     <Card sx={{ maxWidth: 500 }}>
-      <CardMedia style={{backgroundColor:"#388ee7",height:"250px"}}
+      <CardMedia style={{backgroundColor:color,height:"250px"}}
         sx={{ height: 140 }}
         image  ={Clooounds}
         title="green iguana"
