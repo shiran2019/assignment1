@@ -16,7 +16,8 @@ body {
   .weather-row{
     display: flex;
     justify-content: space-between;
-    padding-top: 20px;
+    padding-top: 30px;
+     padding: 0% 10%;
   }
   
 

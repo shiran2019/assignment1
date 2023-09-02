@@ -55,7 +55,7 @@ const CityList = () => {
 
    return (
     <div>
-      <p style={{ fontSize: "20px", position: "relative", top: "20px" }}>
+      <p style={{ fontSize: "30px", position: "relative", top: "20px" }}>
         <b>
           <center>
             <WbSunnyIcon /> Weather App
