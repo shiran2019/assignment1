@@ -2,4 +2,15 @@ body {
     background-color: #1f2128;
 }
 
+body {
+    margin: 0; 
+    padding: 0; 
+    font-family: "Inter", sans-serif;
+    color: white;
+    background-image: url(Headerbg.png);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed; 
+  }
+  
 
