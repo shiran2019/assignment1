@@ -27,10 +27,10 @@ const Weather = (props) => {
 
   return (
     <div className="weather-container">
-      <Card sx={{ maxWidth: 600 }}>
+      <Card sx={{ maxWidth: 630 }}>
         <CardMedia
           sx={{
-            height: 250,
+            height: 320,
             backgroundColor: color,
           }}
           image={Clooounds}
@@ -48,7 +48,7 @@ const Weather = (props) => {
             </div>
             <div className="weather-info">
               <div className="weather-icon">
-                <CloudQueueOutlinedIcon />
+                <CloudQueueOutlinedIcon /> 
                 <b>{desc}</b>
               </div>
               <div className="temperature-range">
@@ -87,6 +87,7 @@ const Weather = (props) => {
             </center>
           </div>
           <div className="weather-details-right">
+          <hr className="weather-details-divider" />
             <p>
               <b>Sunrise:</b> {sunrise}
             </p>
