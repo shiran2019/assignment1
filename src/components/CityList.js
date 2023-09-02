@@ -57,9 +57,10 @@ const CityList = () => {
     <div>
       <p style={{ fontSize: "30px", position: "relative", top: "20px" }}>
         <b>
-          <center>
-            <WbSunnyIcon /> Weather App
-          </center>
+        <center>
+  <WbSunnyIcon style={{ fontSize: '30px' }} /> Weather App
+</center>
+
         </b>
       </p>
       <Container fluid className="weather-container">
