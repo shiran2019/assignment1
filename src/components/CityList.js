@@ -20,7 +20,7 @@ const CityList = () => {
       const weatherResults = await Promise.all(dataPromises);
       setWeatherData(weatherResults);
     } catch (error) {
-      // Handle the error
+
     }
   }
 
@@ -28,7 +28,7 @@ const CityList = () => {
     fetchWeatherData();
   }, []);
 
-  // Define a function to map weather descriptions to colors
+
   const getColorForDescription = (desc) => {
     switch (desc) {
       case "clear sky":
@@ -46,7 +46,7 @@ const CityList = () => {
     }
   };
 
-  // Split the weatherData into pairs for each row
+
   const weatherPairs = [];
   for (let i = 0; i < weatherData.length; i += 2) {
     const pair = weatherData.slice(i, i + 2);

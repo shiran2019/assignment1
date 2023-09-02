@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import NearMeOutlinedIcon from "@mui/icons-material/NearMeOutlined";
 import Clooounds from "./cloounds.png";
 import CloudQueueOutlinedIcon from "@mui/icons-material/CloudQueueOutlined";
-import "./Weather.css"; // Import the CSS file for styling
+import "./Weather.css"; 
 
 const Weather = (props) => {
   const {

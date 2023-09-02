@@ -12,5 +12,11 @@ body {
     background-size: cover; 
     background-attachment: fixed; 
   }
+
+  .weather-row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
   
 
