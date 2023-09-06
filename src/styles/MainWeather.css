@@ -7,7 +7,7 @@ body {
     padding: 0; 
     font-family: "Inter", sans-serif;
     color: white;
-    background-image: url(Headerbg.png);
+    background-image: url(/src/images/Headerbg.png);
     background-repeat: no-repeat;
     background-size: cover; 
     background-attachment: fixed; 

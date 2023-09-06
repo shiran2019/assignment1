@@ -1,9 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-import CityList from './components/CityList';
-
-
-
+import logo from "./logo.svg";
+import "../src/styles/App.css";
+import CityList from "./components/CityList";
 
 function App() {
   return (
@@ -11,7 +8,6 @@ function App() {
       <main>
         <CityList />
       </main>
-   
     </div>
   );
 }

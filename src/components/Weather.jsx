@@ -3,9 +3,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import NearMeOutlinedIcon from "@mui/icons-material/NearMeOutlined";
-import Clooounds from "./cloounds.png";
+import Clooounds from "../images/cloounds.png";
 import CloudQueueOutlinedIcon from "@mui/icons-material/CloudQueueOutlined";
-import "./Weather.css"; 
+import "..//styles/Weather.css"; 
 
 const Weather = (props) => {
   const {
