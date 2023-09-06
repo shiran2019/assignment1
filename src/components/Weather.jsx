@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import NearMeOutlinedIcon from "@mui/icons-material/NearMeOutlined";
 import Clooounds from "../images/cloounds.png";
 import CloudQueueOutlinedIcon from "@mui/icons-material/CloudQueueOutlined";
-import "..//styles/Weather.css"; 
+import "../styles/Weather.css"; 
 
 const Weather = (props) => {
   const {
@@ -27,14 +27,11 @@ const Weather = (props) => {
 
   return (
     <div className="weather-container">
-      <Card sx={{ maxWidth: 590 }}>
-        <CardMedia
-          sx={{
-            height: 320,
-            backgroundColor: color,
-          }}
+      <Card className="card_style">
+        <CardMedia className="card_media_style"
+          sx={{ backgroundColor: color}}
           image={Clooounds}
-          title="green iguana"
+          
         >
           <CardContent>
             <div className="weather-header">

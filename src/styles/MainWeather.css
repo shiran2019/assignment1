@@ -13,11 +13,20 @@ body {
     background-attachment: fixed; 
   }
 
-  .weather-row{
-    display: flex;
-    justify-content: space-between;
+  .weather-row {
     padding-top: 30px;
-     padding: 0% 10%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
   
+  .head_p {
+    color: white;
+    font-size: 30px;
+    position: relative;
+    top: 20px;
 
+  }
+
+  .head_icon {
+    font-size: 30px;
+  }

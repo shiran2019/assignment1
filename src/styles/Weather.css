@@ -74,4 +74,11 @@
   .sunrise-sunset {
     padding-top: 20px;
   }
+
+.card_style {
+  max-width: 590;
+} 
   
+.card_media_style {
+  height: 280px;
+}

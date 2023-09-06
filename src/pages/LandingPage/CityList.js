@@ -55,10 +55,10 @@ const CityList = () => {
 
   return (
     <div>
-      <p style={{ fontSize: "30px", position: "relative", top: "20px" }}>
+      <p className="head_p">
         <b>
           <center>
-            <WbSunnyIcon style={{ fontSize: "30px" }} /> Weather App
+            <WbSunnyIcon className="head_icon" /> Weather App
           </center>
         </b>
       </p>
@@ -66,7 +66,7 @@ const CityList = () => {
         {weatherPairs.map((pair, index) => (
           <Row key={index} className="weather-row">
             {pair.map((city, cityIndex) => (
-              <Col lg={6} key={cityIndex}>
+              <Col lg={6} sm={12} key={cityIndex}>
                 <Weather
                   key={cityIndex}
                   city={city.list[0].name}
