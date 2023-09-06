@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "../src/styles/App.css";
-import CityList from "./components/CityList";
+import CityList from "./pages/LandingPage/CityList";
 
 function App() {
   return (

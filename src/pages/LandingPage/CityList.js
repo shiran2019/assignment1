@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import WeatherService from "../services/wetherservice";
-import cityData from "../data/cities.json";
-import Weather from "./Weather";
-import "..//styles/MainWeather.css";
+import WeatherService from "../../services/wetherservice";
+import cityData from "../../data/cities.json";
+import Weather from "../../components/Weather";
+import "../../styles//MainWeather.css";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import Headerbg from "../images/Headerbg.png";
 import { Col, Container, Row } from "react-bootstrap";
 
 const CityList = () => {
@@ -44,7 +43,7 @@ const CityList = () => {
       case "shower rain":
         return "#3a4e9c";
       default:
-        return "red";
+        return "#9c9a3a";
     }
   };
 
