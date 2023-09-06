@@ -50,8 +50,7 @@
 
 
 import axios from "axios";
-
-const CACHE_EXPIRATION = 5 * 60 * 1000; // expire cache after 5 minutes
+import { CACHE_EXPIRATION } from "../constants/Constant";
 
 const WeatherService = {
   getWeatherByCityCode: async (cityCode) => {
