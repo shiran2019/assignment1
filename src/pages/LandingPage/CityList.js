@@ -11,20 +11,24 @@ const CityList = () => {
 
   async function fetchWeatherData() {
     const cityCodes = cityData.List;
-    const dataPromises = cityCodes.map((cityArray) =>
-      WeatherService.getWeatherByCityCode(cityArray.CityCode)
-    );
+     const cities = cityCodes.map((city) => city.CityCode);
+     const dataPromises = WeatherService.getWeatherByCityCode(cities)
 
-    try {
-      const weatherResults = await Promise.all(dataPromises);
-      setWeatherData(weatherResults);
-    } catch (error) {}
+     
+    dataPromises
+    .then((resolvedArray) => {
+      setWeatherData(resolvedArray);
+    })
+    .catch((error) => {
+      console.error("Error", error);
+    });
+
   }
 
   useEffect(() => {
     fetchWeatherData();
-    console.log(process.env);
   }, []);
+
 
   const getColorForDescription = (desc) => {
     switch (desc) {
@@ -68,6 +72,7 @@ const CityList = () => {
             {pair.map((city, cityIndex) => (
               <Col lg={6} sm={12} key={cityIndex}>
                 <Weather
+                  className="weather"
                   key={cityIndex}
                   city={city.list[0].name}
                   temp={city.list[0].main.temp}

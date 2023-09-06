@@ -45,7 +45,7 @@ const Weather = (props) => {
             </div>
             <div className="weather-info">
               <div className="weather-icon">
-                <CloudQueueOutlinedIcon style={{padding:"0px 10px"}} />
+                <CloudQueueOutlinedIcon className="cloud-icon" />
                 <b>{desc}</b>
               </div>
               <div className="temperature-range">
