@@ -10,10 +10,9 @@ const CityList = () => {
   const [weatherData, setWeatherData] = useState([]);
 
   async function fetchWeatherData() {
-    const cityCodes = cityData.List;
-     const cities = cityCodes.map((city) => city.CityCode);
-     const dataPromises = WeatherService.getWeatherByCityCode(cities)
-
+  const cityCodes = cityData.List;
+  const cities = cityCodes.map((city) => city.CityCode);
+  const dataPromises = WeatherService.getWeatherByCityCode(cities)
      
     dataPromises
     .then((resolvedArray) => {
@@ -22,7 +21,6 @@ const CityList = () => {
     .catch((error) => {
       console.error("Error", error);
     });
-
   }
 
   useEffect(() => {
@@ -56,6 +54,7 @@ const CityList = () => {
     const pair = weatherData.slice(i, i + 2);
     weatherPairs.push(pair);
   }
+
 
   return (
     <div>

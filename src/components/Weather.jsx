@@ -7,6 +7,7 @@ import Clooounds from "../images/cloounds.png";
 import CloudQueueOutlinedIcon from "@mui/icons-material/CloudQueueOutlined";
 import "../styles/Weather.css"; 
 
+
 const Weather = (props) => {
   const {
     city,
