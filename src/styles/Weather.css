@@ -37,6 +37,7 @@
   
   .temperature-range {
     color: white;
+    
   }
   
   .weather-details {
@@ -52,6 +53,7 @@
     padding: 0px 20px;
   }
   
+  
   .weather-details-divider {
     width: 10px;
     height: 100px;
@@ -59,8 +61,14 @@
     border-left: 1px solid rgba(255, 255, 255, 0.2);
     margin: 0;
     padding: 0%;
+}
+
+@media (max-width: 767px) {
+  .weather-details-divider {
+      display: none; 
   }
-  
+}
+
   .weather-details-center {
     flex: 1;
     padding: 10px;
@@ -77,12 +85,9 @@
 
 .card_style {
   max-width: 590;
+  min-width: 590;
 } 
   
-.card_media_style {
-  height: 280px;
-}
-
 .cloud-icon{
   margin: 0px 10px;
   font-size: 50px;

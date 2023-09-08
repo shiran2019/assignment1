@@ -5,8 +5,8 @@ import CardMedia from "@mui/material/CardMedia";
 import NearMeOutlinedIcon from "@mui/icons-material/NearMeOutlined";
 import Clooounds from "../images/cloounds.png";
 import CloudQueueOutlinedIcon from "@mui/icons-material/CloudQueueOutlined";
-import "../styles/Weather.css"; 
-
+import "../styles/Weather.css";
+import { Col, Row } from "react-bootstrap";
 
 const Weather = (props) => {
   const {
@@ -29,40 +29,56 @@ const Weather = (props) => {
   return (
     <div className="weather-container">
       <Card className="card_style">
-        <CardMedia className="card_media_style"
-          sx={{ backgroundColor: color}}
+        <CardMedia
+          className="card_media_style"
+          sx={{ backgroundColor: color }}
           image={Clooounds}
-          
         >
           <CardContent>
             <div className="weather-header">
-              <div className="weather-header-left">
-                <p className="city">{city}</p>
-                <p className="date">{date}</p>
-              </div>
-              <div className="weather-header-right">
-                <p className="temperature">{temp}&deg;C</p>
-              </div>
+              <Row>
+                <Col lg={9} sm={12}>
+                  <div className="weather-header-left">
+                    <p className="city">{city}</p>
+                    <p className="date">{date}</p>
+                  </div>
+                </Col>
+                <Col lg={3} sm={12}>
+                  <div className="weather-header-right">
+                    <p className="temperature">{temp}&deg;C</p>
+                  </div>
+                </Col>
+              </Row>
             </div>
+
             <div className="weather-info">
-              <div className="weather-icon">
-                <CloudQueueOutlinedIcon className="cloud-icon" />
-                <b>{desc}</b>
-              </div>
-              <div className="temperature-range">
-                <p>
-                  <b>Temp min: {temp_min}&deg;C</b>
-                </p>
-                <p>
-                  <b>Temp max: {temp_max}&deg;C</b>
-                </p>
-              </div>
+              <Row>
+                <Col lg={9} sm={12}>
+                  <div className="weather-icon">
+                    <CloudQueueOutlinedIcon className="cloud-icon" />
+                    <b>{desc}</b>
+                  </div>
+                </Col>
+                <Col lg={3} sm={12}>
+                  <div className="temperature-range">
+                    <p>
+                      <b>Temp_min:-{temp_min}&deg;C</b>
+                    </p>
+                    <p>
+                      <b>Temp_max:-{temp_max}&deg;C</b>
+                    </p>
+                  </div>
+                </Col>
+              </Row>
             </div>
           </CardContent>
         </CardMedia>
 
         <CardContent className="weather-details">
-          <div className="weather-details-left">
+
+        <Row>
+  <Col lg={3} sm={12}>
+  <div className="weather-details-left">
             <p>
               <b>Pressure:</b> {pressure} hpa
             </p>
@@ -72,22 +88,21 @@ const Weather = (props) => {
             <p>
               <b>Visibility:</b> {visibility} km
             </p>
-          </div>
-          <hr className="weather-details-divider" />
-          <div className="weather-details-center">
-            <center>
-              <NearMeOutlinedIcon />
-            </center>
-            <center>
-              <p>
-                {windspeed} m/s {degree} degree
-              </p>
-            </center>
-          </div>
-          <hr className="weather-details-divider" />
-          <div className="weather-details-right">
-            <div className="sunrise-sunset">
+          </div></Col>
+  <Col  lg={1} sm={12}>  <hr  className="weather-details-divider" /></Col>
+  <Col lg={3} sm={12}> <div className="weather-details-center">
+            
 
+             
+           
+              <p>
+              <NearMeOutlinedIcon /> {windspeed} m/s {degree} degree
+              </p>
+           
+          </div></Col>
+  <Col lg={1} sm={12}>    <hr  className="weather-details-divider" /></Col>
+  <Col lg={3} sm={12}>      <div className="weather-details-right">
+            <div className="sunrise-sunset">
               <p>
                 <b>Sunrise:</b> {sunrise}
               </p>
@@ -95,7 +110,14 @@ const Weather = (props) => {
                 <b>Sunset:</b> {sunset}
               </p>
             </div>
-          </div>
+          </div></Col>
+</Row>
+
+        
+        
+         
+      
+    
         </CardContent>
       </Card>
     </div>
@@ -103,3 +125,4 @@ const Weather = (props) => {
 };
 
 export default Weather;
+
