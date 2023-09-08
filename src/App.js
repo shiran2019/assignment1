@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+
 import "../src/styles/App.css";
 import CityList from "./pages/LandingPage/CityList";
 import "bootstrap/dist/css/bootstrap.min.css";

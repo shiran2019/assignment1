@@ -104,7 +104,7 @@ const Weather = (props) => {
   <Col lg={3} sm={12}>      <div className="weather-details-right">
             <div className="sunrise-sunset">
               <p>
-                <b>Sunrise:</b> {sunrise}
+                <b>Sunrise:</b>{sunrise}
               </p>
               <p>
                 <b>Sunset:</b> {sunset}

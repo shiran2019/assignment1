@@ -3,8 +3,9 @@ import { CACHE_EXPIRATION } from "../constants/Constant";
 
 
 const WeatherService = {
+ 
   getWeatherByCityCode: async (cityCode) => {
-    
+   
     const cachedData = localStorage.getItem(process.env.REACT_APP_CACHE_KEY);
     if (cachedData) {
       const { timestamp, data } = JSON.parse(cachedData);

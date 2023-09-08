@@ -5,8 +5,10 @@ import Weather from "../../components/Weather";
 import "../../styles//MainWeather.css";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import { Col, Container, Row } from "react-bootstrap";
+import SearchBar from "../../components/SearchBar";
 
 const CityList = () => {
+ 
   const [weatherData, setWeatherData] = useState([]);
 
   async function fetchWeatherData() {
@@ -17,6 +19,7 @@ const CityList = () => {
     dataPromises
     .then((resolvedArray) => {
       setWeatherData(resolvedArray);
+    
     })
     .catch((error) => {
       console.error("Error", error);
@@ -24,6 +27,7 @@ const CityList = () => {
   }
 
   useEffect(() => {
+    console.log("useEffect"); 
     fetchWeatherData();
   }, []);
 
@@ -58,12 +62,15 @@ const CityList = () => {
 
   return (
     <div>
+     
       <p className="head_p">
         <b>
+
           <center>
             <WbSunnyIcon className="head_icon" /> Weather App
           </center>
         </b>
+       <div className="search-container"> <SearchBar/></div>
       </p>
       <Container fluid className="weather-container">
         {weatherPairs.map((pair, index) => (
