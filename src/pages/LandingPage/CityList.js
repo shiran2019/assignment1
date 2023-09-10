@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import WeatherService from "../../services/wetherservice";
 import cityData from "../../data/cities.json";
 import Weather from "../../components/Weather";
@@ -8,6 +8,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import SearchBar from "../../components/SearchBar";
 
 const CityList = () => {
+  const shouldFetch =  useRef(true);
   const [weatherData, setWeatherData] = useState([]);
 
 
@@ -27,8 +28,11 @@ const CityList = () => {
 
   
   useEffect(() => {
-    console.log("useEffect");
+  if (shouldFetch.current) {
+    shouldFetch.current = false;
     fetchWeatherData();
+    
+  }
   }, []);
 
   const getColorForDescription = (desc) => {
