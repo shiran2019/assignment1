@@ -11,6 +11,9 @@ const CityList = () => {
   const shouldFetch =  useRef(true);
   const [weatherData, setWeatherData] = useState([]);
 
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
 
   async function fetchWeatherData() {
     const cityCodes = cityData.List;
@@ -19,6 +22,7 @@ const CityList = () => {
 
     dataPromises
       .then((resolvedArray) => {
+        console.log("resolvedArray", resolvedArray);
         setWeatherData(resolvedArray);
       })
       .catch((error) => {
@@ -35,6 +39,14 @@ const CityList = () => {
   }
   }, []);
 
+  useEffect(() => {
+    const filteredResults = weatherData.filter((city) =>
+      city.list[0].name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setSearchResults(filteredResults);
+  }, [searchQuery, weatherData]);
+
+  
   const getColorForDescription = (desc) => {
     switch (desc) {
       case "clear sky":
@@ -57,8 +69,8 @@ const CityList = () => {
   };
 
   const weatherPairs = [];
-  for (let i = 0; i < weatherData.length; i += 2) {
-    const pair = weatherData.slice(i, i + 2);
+  for (let i = 0; i < searchResults.length; i += 2) {
+    const pair = searchResults.slice(i, i + 2);
     weatherPairs.push(pair);
   }
 
@@ -72,7 +84,10 @@ const CityList = () => {
         </b>
         <div className="search-container">
           {" "}
-          <SearchBar />
+          <SearchBar
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
         </div>
       </p>
       <Container fluid className="weather-container">
