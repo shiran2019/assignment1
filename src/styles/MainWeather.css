@@ -32,7 +32,8 @@ body {
   }
 
   .search-container{
-    margin-top: 20px;
-    margin-left: 20%;
-    margin-right: 10%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+   
   }
