@@ -8,29 +8,28 @@ import { Col, Container, Row } from "react-bootstrap";
 import SearchBar from "../../components/SearchBar";
 
 const CityList = () => {
- 
   const [weatherData, setWeatherData] = useState([]);
 
+
   async function fetchWeatherData() {
-  const cityCodes = cityData.List;
-  const cities = cityCodes.map((city) => city.CityCode);
-  const dataPromises = WeatherService.getWeatherByCityCode(cities)
-     
+    const cityCodes = cityData.List;
+    const cities = cityCodes.map((city) => city.CityCode);
+    const dataPromises = WeatherService.getWeatherByCityCode(cities);
+
     dataPromises
-    .then((resolvedArray) => {
-      setWeatherData(resolvedArray);
-    
-    })
-    .catch((error) => {
-      console.error("Error", error);
-    });
+      .then((resolvedArray) => {
+        setWeatherData(resolvedArray);
+      })
+      .catch((error) => {
+        console.error("Error", error);
+      });
   }
 
+  
   useEffect(() => {
-    console.log("useEffect"); 
+    console.log("useEffect");
     fetchWeatherData();
   }, []);
-
 
   const getColorForDescription = (desc) => {
     switch (desc) {
@@ -59,18 +58,18 @@ const CityList = () => {
     weatherPairs.push(pair);
   }
 
-
   return (
     <div>
-     
       <p className="head_p">
         <b>
-
           <center>
             <WbSunnyIcon className="head_icon" /> Weather App
           </center>
         </b>
-       <div className="search-container"> <SearchBar/></div>
+        <div className="search-container">
+          {" "}
+          <SearchBar />
+        </div>
       </p>
       <Container fluid className="weather-container">
         {weatherPairs.map((pair, index) => (
