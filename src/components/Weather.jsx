@@ -7,6 +7,8 @@ import Clooounds from "../images/cloounds.png";
 import CloudQueueOutlinedIcon from "@mui/icons-material/CloudQueueOutlined";
 import "../styles/Weather.css";
 import { Col, Row } from "react-bootstrap";
+import { useState } from "react";
+import Popup from "./Popup";
 
 const Weather = (props) => {
   const {
@@ -26,9 +28,24 @@ const Weather = (props) => {
     color,
   } = props;
 
+  
+  // State to manage whether the popup is open or not
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  // Function to open the popup
+  const openPopup = () => {
+    setPopupOpen(true);
+  };
+
+  // Function to close the popup
+  const closePopup = () => {
+    setPopupOpen(false);
+  };
+
   return (
-    <div className="weather-container">
-      <Card className="card_style">
+    <div className="weather-container" >
+      <Card className="card_style" onClick={openPopup}>
+
         <CardMedia
           className="card_media_style"
           sx={{ backgroundColor: color }}
@@ -120,6 +137,26 @@ const Weather = (props) => {
     
         </CardContent>
       </Card>
+      {isPopupOpen && (
+        <Popup
+          city={city}
+          temp={temp}
+          date={date}
+          desc={desc}
+          pressure={pressure}
+          humidity={humidity}
+          visibility={visibility}
+          temp_min={temp_min}
+          temp_max={temp_max}
+          windspeed={windspeed}
+          degree={degree}
+          sunrise={sunrise}
+          sunset={sunset}
+          color={color}
+          onClose={closePopup}
+          
+        />
+      )}
     </div>
   );
 };

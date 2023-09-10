@@ -6,6 +6,7 @@ import "../../styles//MainWeather.css";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import { Col, Container, Row } from "react-bootstrap";
 import SearchBar from "../../components/SearchBar";
+import Popup from "../../components/Popup";
 
 const CityList = () => {
   const shouldFetch =  useRef(true);
@@ -46,7 +47,7 @@ const CityList = () => {
     setSearchResults(filteredResults);
   }, [searchQuery, weatherData]);
 
-  
+
   const getColorForDescription = (desc) => {
     switch (desc) {
       case "clear sky":
@@ -82,6 +83,7 @@ const CityList = () => {
             <WbSunnyIcon className="head_icon" /> Weather App
           </center>
         </b>
+        <Popup />
         <div className="search-container">
           {" "}
           <SearchBar
